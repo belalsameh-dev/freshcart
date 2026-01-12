@@ -1,1 +1,109 @@
-.ProductCard {}
+.product-card {
+    padding: 20px;
+    border: 1px solid var(--bs-tertiary-bg);
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+.product-card:hover {
+    border-color: var(--main-color);
+    background: #0aad0a0d;
+    box-shadow: 0 10px 15px -15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    transform: translateY(-5px);
+}
+
+.img-container {
+    overflow: hidden;
+}
+.product-img {
+    width: 100%;
+    transition: all 0.3s;
+}
+.product-card:hover .product-img {
+    transform: scale(1.1);
+}
+
+.category-rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-category {
+    color: var(--main-color);
+    margin-block: 15px 2px;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.rating svg {
+    color: var(--rating-color);
+}
+
+.product-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.price-rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.product-card button {
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 26px;
+    font-weight: 500;
+    transition: all 0.25s;
+}
+.product-card button:hover {
+    opacity: 0.8;
+}
+.product-card button:active {
+    transform: scale(0.9);
+}
+
+.cart {
+    display: block;
+    width: 100%;
+    text-align: start;
+    border-top: 3px solid var(--bs-dark) !important;
+    border-bottom: 3px solid var(--bs-dark) !important;
+    position: relative;
+}
+.cart::before {
+    content: 'ADD TO CART';
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.cart.adding {
+    text-align: end;
+    border-top: 3px solid var(--main-color) !important;
+    border-bottom: 3px solid var(--main-color) !important;
+}
+.cart.adding::before {
+    content: 'ADDING...';
+    color: var(--main-color);
+}
+
+.wishlist {   
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}

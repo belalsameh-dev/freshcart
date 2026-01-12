@@ -10,7 +10,7 @@ import TopRatedProducts from "../../components/TopRatedProducts/TopRatedProducts
 function Home() {
   const { getLoggedUserCart } = useCart();
   const { getLoggedUserWish } = useWish();
-  
+
   useEffect(() => {
     getLoggedUserCart();
     getLoggedUserWish();

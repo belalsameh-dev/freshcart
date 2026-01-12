@@ -1,1 +1,119 @@
-.Navbar {}
+.navbar-brand {
+    transition: all 0.2s ease-in-out;
+}
+.navbar-brand:hover {
+    transform: translateY(-2px);
+}
+.navbar-brand img {
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+.nav-link:not(.nav-btn):hover {
+    color: var(--black-color);
+    transform: translateY(-2px);
+}
+.nav-link.active {
+    color: var(--main-color) !important;
+}
+.nav-link.active:not(.nav-btn):after {
+    content: '';
+    background: var(--main-color);
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+}
+
+.nav-btn {
+  position: relative;
+}
+.nav-btn::after {
+  content: attr(data-text);
+  color: var(--main-color);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 0.6rem;
+  font-weight: 600;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+}
+.nav-btn .icon {
+  font-size: 1.4rem;
+  min-width: 30px;
+  transition: 0.2s linear;
+}
+.nav-btn .icon path {
+  transition: 0.2s linear;
+}
+.nav-btn:hover > .icon {
+  transform: scale(1.1);
+}
+
+.nav-btn:hover > .icon path {
+  fill: var(--main-color);
+}
+
+.nav-btn:hover::after,
+.nav-btn.active::after{
+  visibility: visible;
+  opacity: 1;
+  top: 85%;
+}
+
+a.nav-btn .badge {
+  background: var(--bs-danger);
+  position: absolute;
+  top: 0;
+  left: 28px;
+  z-index: 1;
+  font-size: 9px;
+}
+
+button.nav-btn {
+  margin-left: 0.5rem;
+}
+button.nav-btn:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 992px) {
+    .nav-link.active:not(.nav-btn):after {
+        top: calc(100% - 0.25rem);
+    }
+
+    .nav-btn:not(.remove):after {
+        top: 75%;
+        left: 35px;
+        transform: translateY(-50%);
+    }
+
+    .nav-btn:not(.remove):hover::after,
+    .nav-btn:not(.remove).active::after{
+        visibility: visible;
+        opacity: 1;
+        top: 50%;
+    }     
+    
+    a.nav-btn .badge {
+      top: 50%;
+      right: 0;
+      left: unset;
+      transform: translateY(-50%);
+    }
+
+    button.nav-btn {
+      margin-left: 0;
+    }
+}

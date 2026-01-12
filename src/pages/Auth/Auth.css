@@ -1,1 +1,33 @@
-.Auth {}
+section.auth {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 76px 20px;
+}
+
+.auth-form {
+    width: min(100%, 600px);
+    margin: auto;
+    padding: 50px 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
+
+@media (max-width: 480px) {
+    .auth-form {
+        padding-inline: 30px;
+    }
+}
+
+.forget-password-link {
+    display: block;
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-block: 10px;
+}
+.forget-password-link:hover {
+    color: color-mix(in srgb, var(--main-color) 85%, var(--black-color) 15%);
+}

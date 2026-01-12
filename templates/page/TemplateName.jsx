@@ -1,4 +1,4 @@
-import "./templateName.css";
+import "./TemplateName.css";
 
 function TemplateName() {
   return (

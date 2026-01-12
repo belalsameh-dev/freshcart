@@ -1,1 +1,40 @@
-.MainSlider {}
+.main-slider {
+    margin-bottom: 70px;
+}
+
+.slick-slide>div {
+    line-height: 0;
+}
+
+.slider-item {
+    height: 460px;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.banner-item {
+    height: 50%;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (max-width: 1285px) {
+    .slider-item {
+        height: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .slider-item,
+    .banner-item {
+        height: fit-content;
+    }
+}

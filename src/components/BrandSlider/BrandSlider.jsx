@@ -1,4 +1,4 @@
-import "./brandSlider.css";
+import "./BrandSlider.css";
 
 function BrandSlider() {
   return (

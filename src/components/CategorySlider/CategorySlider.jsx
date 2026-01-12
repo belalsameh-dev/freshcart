@@ -1,4 +1,4 @@
-import "./categorySlider.css";
+import "./CategorySlider.css";
 
 function CategorySlider() {
   return (

@@ -1,4 +1,4 @@
-import "./topRatedProducts.css";
+import "./TopRatedProducts.css";
 
 function TopRatedProducts() {
   return (

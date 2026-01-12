@@ -8,13 +8,13 @@ import toast from "react-hot-toast";
 import { Bars } from "react-loader-spinner";
 import "./Auth.css";
 import FormInput from "../../components/formInput/FormInput.jsx";
-// import { useAuth } from "../../hooks/useAuth.js";
+import { useAuth } from "../../hooks/useAuth.js";
 
 function Login() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  // const { setToken } = useAuth();
+  const { setToken } = useAuth();
 
   const validationSchema = Yup.object({
     email: Yup
@@ -37,7 +37,7 @@ function Login() {
       setIsLoading(false);
       toast.success("Logged in successfully", {id: toastId});
       localStorage.setItem('token', token);
-      // setToken(token);
+      setToken(token);
       setTimeout(() => navigate("/"), 1000);
     })
     .catch(({response: {data: { message }}}) => {

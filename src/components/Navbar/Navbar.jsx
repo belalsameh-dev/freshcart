@@ -2,23 +2,23 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./navbar.css";
 import LogoImg from "../../assets/freshcart-logo.svg";
-// import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth.js";
 // import { useCart } from "../../hooks/useCart";
 // import { useWish } from "../../hooks/useWish";
 
 function Navbar() {
-  // const navigate = useNavigate();
-  // const { token, setToken } = useAuth();
+  const navigate = useNavigate();
+  const { token, setToken } = useAuth();
   // const { cartCounter, setCartCounter } = useCart();
   // const { wishCounter, setWishCounter } = useWish();
 
-  // function handleLogout() {
-  //   localStorage.removeItem("token");
-  //   setToken(null);
-  //   setCartCounter(0);
-  //   setWishCounter(0);
-  //   navigate("/login");
-  // }
+  function handleLogout() {
+    localStorage.removeItem("token");
+    setToken(null);
+    // setCartCounter(0);
+    // setWishCounter(0);
+    navigate("/login");
+  }
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary position-fixed z-1 w-100">
@@ -38,7 +38,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          {/* {token && ( */}
+          {token && (
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/products">products</NavLink>
@@ -53,9 +53,9 @@ function Navbar() {
                 <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/allorders">orders</NavLink>
               </li>
             </ul>
-          {/* )} */}
+          )}
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            {/* {token ? ( <> */}
+            {token ? ( <>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link nav-btn active" : "nav-link nav-btn"} data-text="CART" to="/cart">
                   <span className="badge rounded-pill">{/*cartCounter*/}0</span>
@@ -69,18 +69,18 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <button /*onClick={handleLogout}*/ className="nav-link nav-btn" data-text="LOGOUT">
+                <button onClick={handleLogout} className="nav-link nav-btn" data-text="LOGOUT">
                   <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" className="icon" />
                 </button>
               </li>
-            {/* </>) : (<> */}
+            </>) : (<>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/login">login</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/register">register</NavLink>
               </li>
-            {/* </>)} */}
+            </>)}
           </ul>
         </div>
       </div>

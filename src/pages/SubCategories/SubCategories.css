@@ -1,1 +1,27 @@
-.SubCategories {}
+.sub-category-name {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--bs-secondary-bg);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 500;
+    user-select: none;
+    transition: all 0.3s ease;
+    aspect-ratio: 1/0.5;
+}
+.sub-category-name:hover {
+    background: #0aad0a0d;
+    color: var(--main-color);
+    border-color: var(--main-color);
+    box-shadow: 0 10px 15px -15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.sub-category-not-found {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

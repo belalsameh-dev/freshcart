@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar.jsx';
 
-
-const Layout = () => (
-  <div>
-    Layout Component
-  </div>
-);
-
-Layout.propTypes = {};
-
-Layout.defaultProps = {};
+function Layout() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  )
+}
 
 export default Layout;

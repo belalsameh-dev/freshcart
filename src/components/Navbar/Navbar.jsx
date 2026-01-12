@@ -4,19 +4,19 @@ import "./navbar.css";
 import LogoImg from "../../assets/freshcart-logo.svg";
 import { useAuth } from "../../hooks/useAuth.js";
 import { useCart } from "../../hooks/useCart.js";
-// import { useWish } from "../../hooks/useWish.js";
+import { useWish } from "../../hooks/useWish.js";
 
 function Navbar() {
   const navigate = useNavigate();
   const { token, setToken } = useAuth();
   const { cartCounter, setCartCounter } = useCart();
-  // const { wishCounter, setWishCounter } = useWish();
+  const { wishCounter, setWishCounter } = useWish();
 
   function handleLogout() {
     localStorage.removeItem("token");
     setToken(null);
     setCartCounter(0);
-    // setWishCounter(0);
+    setWishCounter(0);
     navigate("/login");
   }
 
@@ -64,7 +64,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link nav-btn active" : "nav-link nav-btn"} data-text="WISHLIST" to="/wishList">
-                  <span className="badge rounded-pill">{/*wishCounter*/}0</span>
+                  <span className="badge rounded-pill">{wishCounter}</span>
                   <FontAwesomeIcon icon="fa-solid fa-heart" className="icon" />
                 </NavLink>
               </li>

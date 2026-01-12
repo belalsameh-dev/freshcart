@@ -1,16 +1,16 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { useWish } from "../../hooks/useWish.js";
+import { useWish } from "../../hooks/useWish.js";
 import { useCart } from "../../hooks/useCart.js";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-  // const { addProductToWish, removeProductFromWish, wishIds } = useWish();
+  const { addProductToWish, removeProductFromWish, wishIds } = useWish();
   const { addProductToCart } = useCart();
   const [addingId, setAddingId] = useState(null);
   
-  // const isFavorite = wishIds.has(product.id);
+  const isFavorite = wishIds.has(product.id);
   const isAdding = addingId === product.id;
 
   function stop(e, fn) {
@@ -18,21 +18,21 @@ function ProductCard({ product }) {
     fn();
   }
 
-  // function handleFavorite(productId) {
-  //   if (isFavorite) {
-  //     toast.promise(removeProductFromWish(productId), {
-  //       loading: "Removing...",
-  //       success: "Product removed successfully",
-  //       error: "Failed to remove product",
-  //     });
-  //   } else {
-  //     toast.promise(addProductToWish(productId), {
-  //       loading: "Adding...",
-  //       success: "Product added successfully",
-  //       error: "Failed to add product",
-  //     });
-  //   }
-  // }
+  function handleFavorite(productId) {
+    if (isFavorite) {
+      toast.promise(removeProductFromWish(productId), {
+        loading: "Removing...",
+        success: "Product removed successfully",
+        error: "Failed to remove product",
+      });
+    } else {
+      toast.promise(addProductToWish(productId), {
+        loading: "Adding...",
+        success: "Product added successfully",
+        error: "Failed to add product",
+      });
+    }
+  }
 
   function handleAddToCart(productId) {
     setAddingId(productId);
@@ -77,15 +77,15 @@ function ProductCard({ product }) {
         )}
       </button>
       <button
-        // onClick={(e) => stop(e, () => handleFavorite(product.id))}
+        onClick={(e) => stop(e, () => handleFavorite(product.id))}
         type="button"
         className="btn wishlist"
       >
-        {/* {isFavorite ? (
+        {isFavorite ? (
           <FontAwesomeIcon icon="fa-solid fa-heart" className="text-danger" />
-        ) : ( */}
+        ) : (
           <FontAwesomeIcon icon="fa-regular fa-heart" />
-        {/* )} */}
+        )}
       </button>
     </div>
   );

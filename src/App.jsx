@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "forgetPassword", element: <ForgetPassword /> },
       { path: "resetCode", element: <ResetCode /> },
-      { path: "resetPassword", element: <ResetPassword /> },
+      { path: "resetPassword", element: <ProtectedRoute><ResetPassword /></ProtectedRoute> },
       { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
       { path: "products", element: <ProtectedRoute><Products /></ProtectedRoute> },
       { path: "products/:id", element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },

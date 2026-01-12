@@ -3,19 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./navbar.css";
 import LogoImg from "../../assets/freshcart-logo.svg";
 import { useAuth } from "../../hooks/useAuth.js";
-// import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks/useCart.js";
 // import { useWish } from "../../hooks/useWish";
 
 function Navbar() {
   const navigate = useNavigate();
   const { token, setToken } = useAuth();
-  // const { cartCounter, setCartCounter } = useCart();
+  const { cartCounter, setCartCounter } = useCart();
   // const { wishCounter, setWishCounter } = useWish();
 
   function handleLogout() {
     localStorage.removeItem("token");
     setToken(null);
-    // setCartCounter(0);
+    setCartCounter(0);
     // setWishCounter(0);
     navigate("/login");
   }
@@ -58,7 +58,7 @@ function Navbar() {
             {token ? ( <>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => isActive ? "nav-link nav-btn active" : "nav-link nav-btn"} data-text="CART" to="/cart">
-                  <span className="badge rounded-pill">{/*cartCounter*/}0</span>
+                  <span className="badge rounded-pill">{cartCounter}</span>
                   <FontAwesomeIcon icon="fa-solid fa-cart-shopping" className="icon" />
                 </NavLink>
               </li>

@@ -1,1 +1,19 @@
-.WishList {}
+.nav-btn.remove.wish {
+    top: 5px;
+    right: 22px;
+}
+
+.wish-details button {
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 26px;
+    font-weight: 500;
+    transition: all 0.25s;
+}
+.wish-details button:hover {
+    opacity: 0.8;
+}
+.wish-details button:active {
+    transform: scale(0.9);
+}

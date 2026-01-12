@@ -2,21 +2,21 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { useWish } from "../../hooks/useWish.js";
-// import { useCart } from "../../hooks/useCart.js";
+import { useCart } from "../../hooks/useCart.js";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
   // const { addProductToWish, removeProductFromWish, wishIds } = useWish();
-  // const { addProductToCart } = useCart();
+  const { addProductToCart } = useCart();
   const [addingId, setAddingId] = useState(null);
   
   // const isFavorite = wishIds.has(product.id);
   const isAdding = addingId === product.id;
 
-  // function stop(e, fn) {
-  //   e.stopPropagation();
-  //   fn();
-  // }
+  function stop(e, fn) {
+    e.stopPropagation();
+    fn();
+  }
 
   // function handleFavorite(productId) {
   //   if (isFavorite) {
@@ -34,14 +34,14 @@ function ProductCard({ product }) {
   //   }
   // }
 
-  // function handleAddToCart(productId) {
-  //   setAddingId(productId);
-  //   toast.promise(addProductToCart(productId), {
-  //       loading: "Adding...",
-  //       success: "Product added successfully",
-  //       error: "Failed to add product",
-  //   }).finally(() => setAddingId(null));
-  // }
+  function handleAddToCart(productId) {
+    setAddingId(productId);
+    toast.promise(addProductToCart(productId), {
+        loading: "Adding...",
+        success: "Product added successfully",
+        error: "Failed to add product",
+    }).finally(() => setAddingId(null));
+  }
 
   return (
     <div className="product-card">
@@ -62,7 +62,7 @@ function ProductCard({ product }) {
         </div>
       </div>
       <button
-        // onClick={(e) => stop(e, () => handleAddToCart(product.id))}
+        onClick={(e) => stop(e, () => handleAddToCart(product.id))}
         disabled={isAdding}
         type="button"
         className={`btn cart ${isAdding && "adding"}`}

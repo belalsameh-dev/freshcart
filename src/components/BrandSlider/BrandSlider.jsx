@@ -55,7 +55,7 @@ function BrandSlider() {
 
   return (
     <div className="brand-slider">
-      <h2 className="sub-title">featured brands</h2>
+      <h2 className="main-title">featured brands</h2>
       <Slider {...settings}>
         {allBrands?.map((brand) => (
           <div key={brand._id} className="grab">

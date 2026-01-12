@@ -1,1 +1,47 @@
-.Categories {}
+.category-card {
+    border: 5px solid var(--bs-tertiary-bg);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 0.8/1;
+}
+.category-card:active {
+    transform: scale(0.95);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    transition: inherit;
+}
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: inherit;
+}
+.category-card:hover .category-overlay {
+    opacity: 1;
+}
+
+.category-name {
+    text-transform: capitalize;
+    transform: translateY(50px);
+    transition: inherit;
+}
+.category-card:hover .category-name {
+    transform: translateY(0);
+}

@@ -4,7 +4,7 @@ import "./navbar.css";
 import LogoImg from "../../assets/freshcart-logo.svg";
 import { useAuth } from "../../hooks/useAuth.js";
 import { useCart } from "../../hooks/useCart.js";
-// import { useWish } from "../../hooks/useWish";
+// import { useWish } from "../../hooks/useWish.js";
 
 function Navbar() {
   const navigate = useNavigate();

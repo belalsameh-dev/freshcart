@@ -1,1 +1,95 @@
-.ProductDetails {}
+.product-details {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s;
+}
+.product-details:hover {
+    background: #0aad0a0d;
+    border-color: var(--main-color);
+    box-shadow: 0 10px 15px -15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+}
+
+.product-details-img {
+    width: 100%;
+}
+
+.product-details-info {
+    height: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+}
+@media (max-width: 576px) {
+    
+    .product-details {
+        padding: 30px;
+    }
+    .product-details-info {
+        padding: 0;
+    }
+}
+
+.product-details-info .product-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.product-desc {
+    font-weight: 400;
+    font-size: 0.9rem;
+
+}
+
+.product-details button {
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 26px;
+    font-weight: 500;
+    transition: all 0.25s;
+}
+.product-details button:hover {
+    opacity: 0.8;
+}
+.product-details button:active {
+    transform: scale(0.9);
+}
+
+.cart {
+    display: block;
+    width: 100%;
+    text-align: start;
+    border-top: 3px solid var(--bs-dark) !important;
+    border-bottom: 3px solid var(--bs-dark) !important;
+    position: relative;
+    
+}
+.cart::before {
+    content: 'ADD TO CART';
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.cart.adding {
+    text-align: end;
+    border-top: 3px solid var(--main-color) !important;
+    border-bottom: 3px solid var(--main-color) !important;
+}
+.cart.adding::before {
+    content: 'ADDING...';
+    color: var(--main-color);
+}
+
+.wishlist {   
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

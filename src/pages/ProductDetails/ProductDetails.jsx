@@ -70,7 +70,7 @@ function ProductDetails() {
 
   return (
     <section className="container min-vh-100 d-flex justify-content-center flex-column px-4">
-      <div className="sub-title">Product Details</div>
+      <div className="main-title">Product Details</div>
       <div className="product-details">
         <div className="row g-4 align-items-center">
           <div className="col-xl-3 col-lg-4 col-md-5">

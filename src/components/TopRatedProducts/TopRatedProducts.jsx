@@ -25,7 +25,7 @@ function TopRatedProducts() {
     return <LoadingScreen />;
   }
 
-  const topRatedProducts = allProducts
+  const topRatedProducts = [...allProducts]
     .sort((a, b) => b.ratingsAverage - a.ratingsAverage)
     .slice(0, 4);
 

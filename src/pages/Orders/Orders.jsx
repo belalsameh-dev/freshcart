@@ -18,7 +18,7 @@ function Orders() {
   const { data: allOrders, isLoading } = useQuery({
     queryKey: ["allOrders"],
     queryFn: getAllOrders,
-    select: (res) => res.data,
+    select: (res) => [...res.data].reverse(),
   });
 
   if (isLoading) {
@@ -29,7 +29,7 @@ function Orders() {
     <section className="orders container">
       <h1 className="section-title">Orders</h1>
       <div className="orders-list">
-        {allOrders.reverse().map((order) => (
+        {allOrders.map((order) => (
           <OrderItem key={order.id} order={order} />
         ))}
       </div>

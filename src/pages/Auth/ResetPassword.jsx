@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { Bars } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Auth.css";
-import FormInput from "../../components/formInput/FormInput.jsx";
+import FormInput from "../../components/FormInput/FormInput.jsx";
 
 function ResetPassword() {
   const navigate = useNavigate();

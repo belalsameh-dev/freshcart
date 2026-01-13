@@ -6,7 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Bars } from "react-loader-spinner";
 import "./Auth.css";
-import FormInput from "../../components/formInput/FormInput.jsx";
+import FormInput from "../../components/FormInput/FormInput.jsx";
 
 function ForgetPassword() {
   const navigate = useNavigate();

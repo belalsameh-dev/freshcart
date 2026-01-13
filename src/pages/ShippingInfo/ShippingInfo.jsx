@@ -8,7 +8,7 @@ import { Bars } from "react-loader-spinner";
 import { useCart } from "../../hooks/useCart.js";
 import { useAuth } from "../../hooks/useAuth.js";
 import "./ShippingInfo.css";
-import FormInput from "../../components/formInput/FormInput.jsx";
+import FormInput from "../../components/FormInput/FormInput.jsx";
 
 function ShippingInfo() {
   const navigate = useNavigate();

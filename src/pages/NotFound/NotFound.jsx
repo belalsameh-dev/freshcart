@@ -1,4 +1,4 @@
-import "./notFound.css";
+import "./NotFound.css";
 import NotFoundImg from "../../assets/error.svg";
 
 function NotFound() {

@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import "./TopRatedProducts.css";
-import LoadingScreen from "../loadingScreen/LoadingScreen.jsx";
-import ProductCard from "../../components/productCard/ProductCard.jsx";
+import LoadingScreen from "../LoadingScreen/LoadingScreen.jsx";
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 
 function TopRatedProducts() {
   const navigate = useNavigate();

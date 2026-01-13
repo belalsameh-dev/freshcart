@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import "./subCategories.css";
+import "./SubCategories.css";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
 function SubCategories() {

@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useWish } from "../../hooks/useWish.js";
 import { useCart } from "../../hooks/useCart.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./wishList.css";
+import "./WishList.css";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
 function WishList() {
